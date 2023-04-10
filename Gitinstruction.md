@@ -26,3 +26,25 @@ git init
 ```
 git clone <адрес репозитория>
 ```
+## 5. Запись изменений репозиторий 
+ ### Определение состояния файлов 
+ Основной инстумент используемый для определения в каком статусе находятся файлы служит команда 
+ ```
+ git status 
+ ``` 
+ Выполнив эту команду вы увидете 
+ ``` 
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+```
+Это означает что у вас чистрый рабочий католог,другими соловами в нет нет отслеживаемых измененных файлов. Git так же не обнорижл неотслеживаемых файлов.если они имеются то они будут перечислены 
+``` 
+$ git status 
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Gitinstruction.md
+```
