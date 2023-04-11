@@ -27,7 +27,7 @@ git init
 git clone <адрес репозитория>
 ```
 ## 5. Запись изменений репозиторий 
- ### Определение состояния файлов 
+ 1. *Определение состояния файлов* 
  Основной инстумент используемый для определения в каком статусе находятся файлы служит команда 
  ```
  git status 
@@ -43,8 +43,43 @@ nothing to commit, working tree clean
 ``` 
 $ git status 
 On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    Name File 
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+2. *Отслеживание новых файлов*
+Для того чтобы начать отслеживать новый файл используем команду `git add (file name)`
+Если выполнить команду `git status` то можно наблюдать следующие 
+```
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+
+    new file:   NAME FILE
+```
+3. *Индексация измененных файлов*
+Чтобы проиндексировать файл,необходимо выполнить команду `git add` 
+Это многофункциональная команда,она используется для: 
+- добавления под версионный контроль новых файлов,
+- для индексации изменений 
+а так же для других целий например:
+- для указания файлов с исправленным слиянием
+Выпроеив `git add ` увидем следующее 
+``` 
+  $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
         modified:   Gitinstruction.md
 ```
+### 6. Просмотр индексированных и неиндексированных изменений 
+Для просмотра изменений можно использовать команду  `git diff` можно использовать эту команду чтобы получить ответы на пару вопросов 
+ - то вы изменили, но ещё не проиндексировали,
+ - что вы проиндексировали и собираетесь включить в коммит
+
